@@ -1,0 +1,101 @@
+<div [formGroup]="form" class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+  <div class="field">
+    <div class="label">Title<small class="required">*</small></div>
+    <input
+      type="text"
+      formControlName="title"
+      pInputText
+      placeholder="Enter your task title"
+    />
+  </div>
+
+  <div class="field">
+    <div class="label">Project<small class="required">*</small></div>
+    <p-dropdown
+      formControlName="project"
+      appendTo="body"
+      placeholder="Select project"
+      [options]="projectOptions"
+      optionLabel="label"
+    ></p-dropdown>
+  </div>
+
+  <div class="field">
+    <div class="label">Date<small class="required">*</small></div>
+    <p-calendar
+      formControlName="date"
+      placeholder="dd/mm/yyyy"
+      appendTo="body"
+      dateFormat="dd/mm/yy"
+      [maxDate]="defaultDate"
+    ></p-calendar>
+  </div>
+
+  <div class="field">
+    <div class="label">Task Type<small class="required">*</small></div>
+    <p-dropdown
+      formControlName="taskType"
+      appendTo="body"
+      placeholder="Select Task Type"
+      [options]="taskTypeOptions"
+      optionLabel="label"
+    ></p-dropdown>
+  </div>
+
+  <div class="field">
+    <div class="label">Task ID</div>
+    <input
+      type="text"
+      formControlName="taskId"
+      pInputText
+      placeholder="Enter task ID, eg: TKT-1201"
+    />
+  </div>
+
+  <div class="field">
+    <div class="label">Efforts<small class="required">*</small></div>
+    <p-inputNumber
+      formControlName="effort"
+      mode="decimal"
+      [minFractionDigits]="2"
+      [maxFractionDigits]="2"
+      [min]="0"
+      [max]="8"
+      placeholder="Enter efforts in hrs"
+    >
+    </p-inputNumber>
+  </div>
+
+  <div class="field">
+    <div class="label">Description</div>
+    <textarea
+      class="w-full"
+      formControlName="description"
+      rows="5"
+      pInputTextarea
+    ></textarea>
+  </div>
+</div>
+
+<div class="flex gap-2 my-6 items-center">
+  <p-checkbox
+    [(ngModel)]="onLeave"
+    [binary]="true"
+    inputId="leave"
+    (onChange)="onChangeLeave($event)"
+  ></p-checkbox>
+  <span class="text-sm font-bold" for="leave">Are you on vacation?</span>
+</div>
+
+<p-divider></p-divider>
+
+<div class="flex justify-end gap-4">
+  <p-button label="Cancel" class="w-40" (click)="onCancel()"></p-button>
+  <p-button
+    label="Save"
+    class="w-40"
+    [loading]="loading"
+    [disabled]="hasDisabled"
+    (click)="onSave()"
+  ></p-button>
+</div>

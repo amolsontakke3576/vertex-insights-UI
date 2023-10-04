@@ -1,0 +1,20 @@
+<div class="grid justify-items-center">
+  <div [formGroup]="form" class="grid gap-4 w-3/4">
+    <div
+      #aiContainer
+      class="overflow-y-auto"
+      [ngStyle]="{ height: operationHeight }"
+    ></div>
+    <div class="flex justify-center items-center gap-4">
+      <textarea rows="3" pInputTextarea formControlName="searchText"></textarea>
+      <p-button
+        label="Send"
+        class="w-24"
+        [disabled]="!form.valid"
+        (click)="onSend()"
+      ></p-button>
+    </div>
+  </div>
+</div>
+
+<ng-template #aiResParser> </ng-template>

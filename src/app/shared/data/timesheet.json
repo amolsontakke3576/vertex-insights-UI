@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Discussion call with Jonathan",
+    "project": "T&C",
+    "date": "Thu Oct 01 2023 00:00:00 GMT+0530 (India Standard Time)",
+    "taskType": "Documentation",
+    "taskId": "",
+    "effort": 4,
+    "description": "Had a 3hrs discussion call with Jonathan and Mark for the test automation planning Started elaborating Faraday scenario as shared by Jonathan"
+  },
+  {
+    "title": "Discussion call with Jonathan",
+    "project": "T&C",
+    "date": "1 Sep 2023",
+    "taskType": "Documentation",
+    "taskId": "PCC-1232",
+    "effort": 4,
+    "description": "Had a 3hrs discussion call with Jonathan and Mark for the test automation planning Started elaborating Faraday scenario as shared by Jonathan"
+  },
+  {
+    "title": "Wrote test cases",
+    "project": "T&C",
+    "date": "1 Sep 2023",
+    "taskType": "Documentation",
+    "taskId": "PCC-1232",
+    "effort": 4,
+    "description": "Had a 3hrs discussion call with Jonathan and Mark for the test automation planning Started elaborating Faraday scenario as shared by Jonathan"
+  },
+
+  {
+    "title": "Wrote test cases",
+    "project": "T&C",
+    "date": "4 Sep 2023",
+    "taskType": "Documentation",
+    "taskId": "",
+    "effort": 4,
+    "description": "Had a 3hrs discussion call with Jonathan and Mark for the test automation planning Started elaborating Faraday scenario as shared by Jonathan"
+  },
+  {
+    "title": "Discussion call with Jonathan",
+    "project": "T&C",
+    "date": "4 Sep 2023",
+    "taskType": "Documentation",
+    "taskId": "TC-3212",
+    "effort": 4,
+    "description": "Had a 3hrs discussion call with Jonathan and Mark for the test automation planning Started elaborating Faraday scenario as shared by Jonathan"
+  },
+  {
+    "title": "Wrote test cases",
+    "project": "T&C",
+    "date": "4 Sep 2023",
+    "taskType": "Documentation",
+    "taskId": "",
+    "effort": 4,
+    "description": "Had a 3hrs discussion call with Jonathan and Mark for the test automation planning Started elaborating Faraday scenario as shared by Jonathan"
+  },
+  {
+    "title": "",
+    "project": "Other",
+    "date": "Thu Oct 05 2023 00:00:00 GMT+0530 (India Standard Time)",
+    "taskType": "Leave",
+    "taskId": "",
+    "effort": 8,
+    "description": ""
+  }
+]

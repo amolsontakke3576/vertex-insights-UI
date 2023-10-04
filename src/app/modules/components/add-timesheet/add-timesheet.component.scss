@@ -1,0 +1,6 @@
+.field {
+  @apply grid gap-1 font-bold;
+  .label {
+    @apply text-sm;
+  }
+}

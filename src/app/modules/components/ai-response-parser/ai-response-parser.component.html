@@ -1,0 +1,31 @@
+<div class="section-view font-roboto">
+  <div class="mb-1 font-bold">{{ question }}</div>
+  <div #writingPad></div>
+  <div
+    *ngIf="hasShowChatOptions && hasWritingDone"
+    class="flex text-[13px] justify-end gap-2 mt-2"
+  >
+    <span class="text-orange-400">Advance options: </span>
+    <div class="flex justify-end gap-2">
+      <a
+        (click)="onClickPieChart()"
+        [ngClass]="{'selected':selectedChart === 'pie'}"
+        >Pie Chart</a
+      >
+      <a
+        (click)="onClickBarChart()"
+        [ngClass]="{ selected: selectedChart === 'bar'}"
+        >Bar Chart</a
+      >
+    </div>
+  </div>
+  <div class="flex justify-center">
+    <div *ngIf="selectedChart === 'pie'" class="w-96 mt-4 p-4">
+      <p-chart type="pie" [data]="pieData" [options]="pieOptions"></p-chart>
+    </div>
+
+    <div *ngIf="selectedChart === 'bar'" class="w-full mt-4 p-4">
+      <p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
+    </div>
+  </div>
+</div>

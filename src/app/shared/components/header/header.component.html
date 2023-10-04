@@ -1,0 +1,21 @@
+<nav class="fixed z-30 w-full bg-primary p-3">
+  <div class="flex justify-between">
+    <a class="flex ml-2 md:mr-24">
+      <img
+        src="../../../../assets/images/proxima-logo.png"
+        class="h-8 mr-3"
+        alt="Proxima logo"
+      />
+    </a>
+    <div class="flex gap-4 items-center text-sm font-roboto font-bold">
+      <div class="text text-end">
+        Welcome, {{ user.firstName + " " + user.lastName }}
+      </div>
+      <p-avatar
+        *ngIf="user?.photoUrl"
+        [image]="user.photoUrl"
+        shape="circle"
+      ></p-avatar>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+body {
+  font-family: var(--font-family);
+  @apply font-roboto;
+}
+
+label {
+  @apply mb-3 text-sm font-semibold;
+}
+
+.required {
+  @apply ml-1 text-sm text-red-500;
+}
+
+p-toast {
+  .p-toast {
+    .p-toast-message-content {
+      @apply border-none;
+
+      .p-toast-message-icon {
+        svg {
+          width: 1.5rem !important;
+          height: 1.5rem !important;
+        }
+      }
+
+      .p-toast-message-text {
+        .p-toast-summary {
+          @apply text-sm;
+        }
+
+        .p-toast-detail {
+          @apply text-[13px] m-0;
+        }
+      }
+    }
+  }
+}
+
+input,
+.p-inputtext,
+textarea {
+  @apply border-[1px] border-solid w-full border-gray-300 rounded-md py-2;
+  &:focus {
+    @apply border border-solid border-gray-300;
+  }
+
+  &.p-inputtext {
+    @apply border border-solid border-gray-300 rounded-md py-2.5 text-[13px];
+    &:focus {
+      @apply border border-solid border-gray-300;
+    }
+  }
+}
+
+p-calendar {
+  .p-calendar {
+    @apply w-full;
+  }
+}
+
+.p-button {
+  @apply rounded-md box-border w-full  text-center h-9;
+
+  .p-button-label {
+    @apply text-sm font-normal;
+  }
+}
+
+p-dropdown {
+  .p-dropdown {
+    @apply w-full py-1;
+
+    .p-dropdown-label {
+      @apply py-2 text-[13px] leading-4 flex items-center;
+    }
+  }
+}
+
+.p-dropdown-panel {
+  .p-dropdown-items-wrapper {
+    .p-dropdown-items {
+      p-dropdownitem {
+        .p-dropdown-item {
+          span {
+            @apply text-[13px];
+          }
+        }
+      }
+    }
+  }
+}
+
+p-tabview {
+  .p-tabview {
+    .p-tabview-nav-container {
+      .p-tabview-nav-content {
+        .p-tabview-nav {
+          .p-highlight {
+            .p-tabview-nav-link {
+              @apply border-b-4;
+            }
+          }
+
+          .p-tabview-nav-link {
+            @apply border-0 text-sm font-bold;
+          }
+        }
+      }
+    }
+
+    .p-tabview-panels {
+      @apply px-0;
+    }
+  }
+}
+
+p-table {
+  .p-datatable {
+    .p-datatable-wrapper {
+      .p-datatable-table {
+        .p-datatable-thead {
+          tr {
+            th {
+              @apply font-sans font-semibold text-[13px] bg-white;
+            }
+          }
+        }
+
+        .p-datatable-tbody {
+          tr {
+            @apply bg-transparent;
+            background-color: #fff;
+
+            &:nth-child(even) {
+              @apply bg-transparent border-t border-b border-solid;
+              &:hover {
+                .datatable-row-group {
+                  background-color: rgba(#0068fa, 0.1);
+                }
+              }
+            }
+
+            &:nth-child(odd) {
+              @apply border-gray-e0e;
+
+              &:not(:hover) {
+                @apply bg-gray-f9f;
+              }
+
+              &:hover {
+                .datatable-row-group {
+                  background-color: rgba(#0068fa, 0.1);
+                }
+              }
+            }
+
+            td {
+              @apply font-sans font-normal text-[13px];
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .p-paginator {
+    @apply border-none;
+  }
+}

@@ -1,0 +1,118 @@
+<div class="grid gap-6 lg:m-4">
+  <div class="flex justify-end">
+    <p-button
+      label="Add Timesheet"
+      (onClick)="onAddTimesheet()"
+      class="w-36"
+    ></p-button>
+  </div>
+
+  <p-table
+    [value]="timesheets"
+    [paginator]="true"
+    [rows]="8"
+    rowGroupMode="rowspan"
+    groupRowsBy="date"
+    sortField="createdAt"
+    [sortOrder]="-1"
+    sortMode="single"
+    responsiveLayout="stack"
+    breakpoint="1024px"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Date</th>
+        <th>Project</th>
+        <th>Task Type</th>
+        <th>Task ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Effort</th>
+        <th>Manage</th>
+      </tr>
+    </ng-template>
+    <ng-template
+      pTemplate="body"
+      let-timesheet
+      let-rowIndex="rowIndex"
+      let-rowgroup="rowgroup"
+      let-rowspan="rowspan"
+    >
+      <tr>
+        <td *ngIf="rowgroup" [attr.rowspan]="rowspan">
+          {{ timesheet.date | date : "dd/MM/y" }}
+        </td>
+        <td>{{ timesheet.project || "-" }}</td>
+        <td>{{ timesheet.taskType || "-" }}</td>
+        <td>{{ timesheet.taskId || "-" }}</td>
+        <td>{{ timesheet.title || "-" }}</td>
+        <td>{{ timesheet.description || "-" }}</td>
+        <td>{{ timesheet.effort }}</td>
+        <td class="flex justify-center gap-2">
+          <p-button
+            label="Edit"
+            styleClass="p-button-sm"
+            (click)="onEdit(timesheet)"
+          ></p-button>
+          <p-button
+            label="Delete"
+            styleClass="p-button-sm"
+            (click)="onDelete(timesheet)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="8" class="text-red-500 !text-center">
+          No timesheet record found.
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<ng-template #loading>
+  <div class="grid gap-6">
+    <div class="flex justify-end">
+      <p-skeleton width="8rem" height="1.5rem"></p-skeleton>
+    </div>
+
+    <p-table
+      [value]="[1, 2, 3]"
+      [paginator]="true"
+      [rows]="10"
+      responsiveLayout="stack"
+      breakpoint="1024px"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Date</th>
+          <th>Project</th>
+          <th>Task Type</th>
+          <th>Task ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Effort</th>
+          <th>Manage</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-timesheet>
+        <tr>
+          <td><p-skeleton height="1.5rem"></p-skeleton></td>
+          <td><p-skeleton height="1.5rem"></p-skeleton></td>
+          <td><p-skeleton height="1.5rem"></p-skeleton></td>
+          <td><p-skeleton height="1.5rem"></p-skeleton></td>
+          <td><p-skeleton height="1.5rem"></p-skeleton></td>
+          <td><p-skeleton height="1.5rem"></p-skeleton></td>
+          <td><p-skeleton height="1.5rem"></p-skeleton></td>
+          <td><p-skeleton height="1.5rem"></p-skeleton></td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</ng-template>
+
+<p-confirmDialog [style]="{ width: '40vw' }"></p-confirmDialog>
+
+<!-- *ngIf="timesheets$ | async as timesheets; else loading" -->

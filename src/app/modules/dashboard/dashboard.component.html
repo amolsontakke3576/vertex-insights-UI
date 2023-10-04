@@ -1,0 +1,26 @@
+<div *ngIf="socialUser; else loading">
+  <div>
+    <app-header [user]="socialUser"></app-header>
+    <div class="p-4 pt-16 font-roboto;">
+      <p-tabView>
+        <p-tabPanel
+          [disabled]="!hasManageTimesheetPermission"
+          header="Manage Timesheet"
+        >
+          <app-manage-timesheet></app-manage-timesheet>
+        </p-tabPanel>
+
+        <p-tabPanel [disabled]="!hasMagicToolPermission" header="AI Insights">
+          <app-manage-ai [user]="socialUser"></app-manage-ai>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #loading>
+  <div class="flex justify-center items-center h-screen">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+</ng-template>
